@@ -1,4 +1,6 @@
 # Vert.x
+image:https://img.shields.io/badge/vert.x-4.5.7-purple.svg[link="https://vertx.io"]
+
 This repository shows how to use the `Vert.x core` and `web` modules also `mongodb` and `web` client on a web application which contains RESTful Web Services.
 
 ## What you will learn in this repository?
