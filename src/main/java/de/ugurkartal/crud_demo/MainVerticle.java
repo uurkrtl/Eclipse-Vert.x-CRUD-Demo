@@ -8,8 +8,11 @@ import io.vertx.ext.mongo.MongoClient;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MainVerticle extends AbstractVerticle {
+  public static final Logger LOGGER = LoggerFactory.getLogger(MainVerticle.class);
   public static final String MONGODB_COLLECTION = "customer";
   public static final String API_URI = "/api/customers";
   private MongoClient mongoClient;
@@ -43,7 +46,7 @@ public class MainVerticle extends AbstractVerticle {
       .listen(8080, http -> {
         if (http.succeeded()) {
           startPromise.complete();
-          System.out.println("HTTP server started on port 8080");
+          LOGGER.info("HTTP server started on port 8080");
         } else {
           startPromise.fail(http.cause());
         }
