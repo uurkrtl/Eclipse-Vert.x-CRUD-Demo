@@ -10,6 +10,8 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 
 public class MainVerticle extends AbstractVerticle {
+  public static final String MONGODB_COLLECTION = "customer";
+  public static final String API_URI = "/api/customers";
   private MongoClient mongoClient;
 
   @Override
@@ -29,11 +31,11 @@ public class MainVerticle extends AbstractVerticle {
     router.route().handler(BodyHandler.create());
 
     // Routes
-    router.post("/api/customers").handler(this::createCustomer);
-    router.get("/api/customers/:id").handler(this::getCustomer);
-    router.put("/api/customers/:id").handler(this::updateCustomer);
-    router.delete("/api/customers/:id").handler(this::deleteCustomer);
-    router.get("/api/customers").handler(this::getAllCustomers);
+    router.post(API_URI).handler(this::createCustomer);
+    router.get(API_URI + "/:id").handler(this::getCustomer);
+    router.put(API_URI + "/:id").handler(this::updateCustomer);
+    router.delete(API_URI + "/:id").handler(this::deleteCustomer);
+    router.get(API_URI).handler(this::getAllCustomers);
 
     // Start HTTP server
     vertx.createHttpServer()
@@ -46,11 +48,10 @@ public class MainVerticle extends AbstractVerticle {
           startPromise.fail(http.cause());
         }
       });
-
   }
 
   private void getAllCustomers(RoutingContext context) {
-    mongoClient.find("customer", new JsonObject(), res -> {
+    mongoClient.find(MONGODB_COLLECTION, new JsonObject(), res -> {
       if (res.succeeded()) {
         JsonArray jsonArray = new JsonArray();
         res.result().forEach(jsonArray::add);
@@ -68,7 +69,7 @@ public class MainVerticle extends AbstractVerticle {
   private void deleteCustomer(RoutingContext context) {
     String id = context.pathParam("id");
     JsonObject query = new JsonObject().put("_id", id);
-    mongoClient.removeDocument("customer", query , res -> {
+    mongoClient.removeDocument(MONGODB_COLLECTION, query , res -> {
       if (res.succeeded()) {
         context.response()
           .setStatusCode(200)
@@ -85,7 +86,7 @@ public class MainVerticle extends AbstractVerticle {
     String id = context.pathParam("id");
     JsonObject json = context.getBodyAsJson();
     JsonObject query = new JsonObject().put("_id", id);
-    mongoClient.updateCollection("customer", query, new JsonObject().put("$set", json), res -> {
+    mongoClient.updateCollection(MONGODB_COLLECTION, query, new JsonObject().put("$set", json), res -> {
       if (res.succeeded()) {
         context.response()
           .setStatusCode(200)
@@ -101,7 +102,7 @@ public class MainVerticle extends AbstractVerticle {
   private void getCustomer(RoutingContext context) {
     String id = context.pathParam("id");
     JsonObject query = new JsonObject().put("_id", id);
-    mongoClient.findOne("customer", query, null, res -> {
+    mongoClient.findOne(MONGODB_COLLECTION, query, null, res -> {
       if (res.succeeded()) {
         if (res.result() != null) {
           context.response()
@@ -122,7 +123,7 @@ public class MainVerticle extends AbstractVerticle {
 
   private void createCustomer(RoutingContext context) {
     JsonObject json = context.getBodyAsJson();
-    mongoClient.save("customer", json, res -> {
+    mongoClient.save(MONGODB_COLLECTION, json, res -> {
       if (res.succeeded()) {
         context.response()
           .setStatusCode(201)

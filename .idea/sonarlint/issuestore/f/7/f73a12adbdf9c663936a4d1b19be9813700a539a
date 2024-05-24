@@ -1,12 +1,8 @@
 
-›
-java:S1192!"SDefine a constant instead of duplicating this literal "/api/customers/:id" 3 times.(ĞÏóıÿÿÿÿ8‡™Ëäú1J$9e409874-023d-4ba9-bf2c-5516613eb69f
-Œ
-java:S11925"IDefine a constant instead of duplicating this literal "customer" 5 times.(”á8ˆ™Ëäú1J$d4977b50-5a0b-4229-afa7-e3683bd43ab9
-l	java:S106,"+Replace this use of System.out by a logger.(™Åºn8§™Ëäú1J$1470284a-3b39-49ac-81a4-aecf1ead44cb
+l	java:S106."+Replace this use of System.out by a logger.(™Åºn8§™Ëäú1J$b5634232-cdb5-40e1-934b-84d3234ffe35
 }
-java:S1874V"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8µ™Ëäú1J$802882d5-0eb1-45f8-984d-43dca60d0c26
+java:S1874W"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8µ™Ëäú1J$e2499038-5d8e-4696-9eee-f1b6cb9d76f9
 x
-java:S1874\"5Remove this use of "getBodyAsJson"; it is deprecated.(ªÍ«¯8·™Ëäú1J$9336751c-fa6e-4732-9085-e18de2fb1b4b
+java:S1874]"5Remove this use of "getBodyAsJson"; it is deprecated.(ªÍ«¯8·™Ëäú1J$50ffcda7-f71b-4e3f-8e7c-251722804c87
 }
-java:S1874|"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8½™Ëäú1J$69a96759-795d-43ac-9e7f-a81b200610c5
+java:S1874}"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8½™Ëäú1J$f50bd3dc-a9f1-47ab-b6c3-9e30501602a3
