@@ -1,8 +1,7 @@
 
-l	java:S106."+Replace this use of System.out by a logger.(™Åºn8§™Ëäú1J$b5634232-cdb5-40e1-934b-84d3234ffe35
 }
-java:S1874W"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8µ™Ëäú1J$e2499038-5d8e-4696-9eee-f1b6cb9d76f9
+java:S1874Z"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8Ò…šæú1J$e4f960cc-6674-485d-9a77-c0cab4d60150
 x
-java:S1874]"5Remove this use of "getBodyAsJson"; it is deprecated.(ªÍ«¯8·™Ëäú1J$50ffcda7-f71b-4e3f-8e7c-251722804c87
-}
-java:S1874}"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8½™Ëäú1J$f50bd3dc-a9f1-47ab-b6c3-9e30501602a3
+java:S1874`"5Remove this use of "getBodyAsJson"; it is deprecated.(ªÍ«¯8Ó…šæú1J$13d30b51-bf53-47d5-8c5b-600bc66dec3b
+~
+java:S1874€"5Remove this use of "getBodyAsJson"; it is deprecated.(ÅÚèÖúÿÿÿÿ8Ö…šæú1J$0bf9f7a7-3e15-4f67-8071-2d2193848b5b

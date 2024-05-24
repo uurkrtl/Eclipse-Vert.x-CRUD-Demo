@@ -18,3 +18,9 @@ S
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+k
+;src/test/java/de/ugurkartal/crud_demo/MainVerticleTest.java,9\6\963068e5cfa1af9dd9e8a72461e1bd6a691d87b5
+;
+README.adoc,2\f\2fcabbd3c29fc94d3f6f7f15eb70637d73b2e93f
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
